@@ -1,49 +1,125 @@
-# Ecommerce App vs. Website Sales Impact Analysis
+# 📊 Ecommerce App vs. Website — Sales Impact Analysis
 
-## Project Overview
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-red?logo=scikit-learn)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-This project aims to analyze customer data for an Ecommerce company to ascertain whether the company should focus more on their mobile app or website to boost sales. Utilizing linear regression analysis, we examine various customer behaviors, including average session length, time on app, time on website, and length of membership, to identify which platform (app or website) has a greater impact on sales.
+## 📌 Overview
 
-## Objective
+This project applies **Linear Regression** to analyze customer behavior data for an Ecommerce company to determine whether they should invest more in their **mobile app** or **website** to boost yearly sales. The analysis covers exploratory data visualization, model training, and evaluation using Python.
 
-To determine the more effective sales platform for the Ecommerce company between the mobile app and website, guiding strategic decisions on marketing and development resource allocation.
+---
 
-## Dataset
+## 🎯 Objective
 
-The dataset includes customer information such as Email, Address, and Avatar color, along with numerical values representing:
-- Average session length
-- Time spent on the app
-- Time spent on the website
-- Length of membership
+To identify which platform — mobile app or website — has a greater influence on the **Yearly Amount Spent** by customers, and provide data-driven recommendations for business strategy.
 
-This information is crucial for understanding customer engagement and preferences.
+---
 
-## Installation
+## 🗂️ Dataset
 
-To run this project, you need Python and several libraries including pandas, numpy, matplotlib, seaborn, and scikit-learn. You can install the dependencies via pip:
+- **File:** `Ecommerce Customers` (CSV)
+- **Records:** 500 customer entries (no missing values)
+- **Features used for modeling:**
 
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
+| Feature | Description |
+|---|---|
+| `Avg. Session Length` | Average in-store style advice session length |
+| `Time on App` | Time spent on the mobile app (minutes) |
+| `Time on Website` | Time spent on the website (minutes) |
+| `Length of Membership` | Number of years as a member |
+
+- **Target Variable:** `Yearly Amount Spent`
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+- Joint plots comparing `Time on App` and `Time on Website` against `Yearly Amount Spent`
+- Hex bin plot for `Time on App` vs `Length of Membership`
+- Pair plots across all numerical features to identify correlations
+- Linear model plot showing `Length of Membership` vs `Yearly Amount Spent`
+
+---
+
+## 🤖 Model
+
+- **Algorithm:** Linear Regression (`sklearn.linear_model.LinearRegression`)
+- **Train/Test Split:** 70% train / 30% test (`random_state=101`)
+
+### Model Coefficients
+
+| Feature | Coefficient |
+|---|---|
+| Length of Membership | **61.28** |
+| Time on App | **38.59** |
+| Avg. Session Length | **25.98** |
+| Time on Website | **0.19** |
+
+### Model Evaluation Metrics
+
+| Metric | Value |
+|---|---|
+| MAE | 7.23 |
+| MSE | 79.81 |
+| RMSE | 8.93 |
+
+Residuals are approximately normally distributed, confirming a good model fit.
+
+---
+
+## 💡 Key Insights
+
+- **Length of Membership** is the strongest predictor of yearly spending (coefficient: 61.28), meaning long-term customer retention has the biggest impact on revenue.
+- **Time on App** (coeff: 38.59) significantly outperforms **Time on Website** (coeff: 0.19), suggesting the mobile app is a far more effective sales channel.
+- **Recommendation:** The company should prioritize improving the **mobile app experience** and focus on **customer retention strategies** to maximize yearly revenue.
+
+---
+
+## 🛠️ Technologies Used
+
+| Tool | Purpose |
+|---|---|
+| Python 3 | Core programming language |
+| Pandas | Data manipulation & exploration |
+| NumPy | Numerical computations |
+| Matplotlib | Static visualizations |
+| Seaborn | Statistical visualizations |
+| scikit-learn | Linear regression model & evaluation |
+| Jupyter Notebook | Interactive analysis environment |
+
+---
+
+## 📁 Project Structure
+
+```
+Linear_regression/
+│
+├── Linear Regression Project.ipynb   # Main analysis notebook
+├── Ecommerce Customers                # Dataset (CSV)
+└── README.md                          # Project documentation
 ```
 
-## Usage
+---
 
-To analyze the Ecommerce customers' data and generate insights:
+## 🚀 Getting Started
 
-1. Clone the repository to your local machine.
-2. Install the required dependencies.
-3. Run the Jupyter notebook `Linear Regression Project.ipynb`.
+```bash
+# Clone the repository
+git clone https://github.com/dhrxv8/Linear_regression.git
+cd Linear_regression
 
-## Analysis Highlights
+# Install dependencies
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 
-- Comparative analysis of time spent on the app vs. the website.
-- Correlation between length of membership and sales.
-- Predictive modeling to forecast sales based on platform engagement metrics.
+# Launch the notebook
+jupyter notebook "Linear Regression Project.ipynb"
+```
 
-## Results
+---
 
-The analysis reveals insights into customer behavior and platform efficiency in sales conversion. Specific findings include the impact of the mobile app and website on overall sales, with recommendations on which platform the Ecommerce company should focus on.
+## 📬 Contact
 
-## Contributing
-
-Contributions to this project are welcome! Please fork the repository and submit a pull request with your proposed changes or improvements.
+**Dhruv**
+🔗 [GitHub Profile](https://github.com/dhrxv8)
